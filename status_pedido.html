@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+ 
+{% block content %}
+    <form action='/update-status/{{ client.id }}' method="post">
+        <div>
+            <label>status pedido</label>
+            <input type = "text" name = "status" placeholder = "Status" value="{{client.status_pedido}}"/>
+        </div> 
+        
+        <input type = "submit" value = "Update"/>  
+     </form> 
+{% endblock content %}
