@@ -2,16 +2,14 @@
  
 {% block content %}
 <form action = '/post-client' method = "post"> 
-    <div class="mb-3">
-        <label>Nombre</label>
-        <input type = "text" name = "nombre" placeholder = "Nombre"/>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">@</span>
+        <input class="form-control" type = "text" name = "nombre" placeholder="Nombre" aria-label='Nombre' aria-describedby="basic-addon1" = "Nombre"/>
     </div> 
     <div class="mb-3">
-        <label>Plato Favorito</label>
-        <input type = "text" name = "plato_favorito" placeholder = "Plato Favorito"/>
+        <input type = "text" name = "plato_favorito" placeholder = "Plato Favorito" class="form-control" aria-label="Plato Favorito" />
     </div> 
- 
-    <input type = "submit" value = "Submit"/>  
+    <input type = "submit" value = "Cadastrar" class="btn btn-success"/>  
  </form> 
   
 {% endblock content %}

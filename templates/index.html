@@ -3,23 +3,25 @@
 {% block content %}
 <div>
     <div>
-        <a href='/form' >Add New</a>
+        
+        <button class="btn btn-info"> <a href='/form' style="text-decoration: none; color: white;">Cadastrar outro</a> </button>
         <br><br>
-        <table>
+        <table class="table">
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Nombre</th>
-                    <th>Plato Favorito</th>
+                    <th  scope="col">ID</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Plato Favorito</th>
+                    <th scope="col">Actions </th>
                 </tr>
             </thead>
             <tbody>
                 {% for client in taco_clients %}
                     <tr>
-                        <td>{{ client.id }}</td>
-                        <td>{{ client.nombre }}</td>
-                        <td>{{ client.plato_favorito }}</td>
-                        <td>
+                        <td scope="col">{{ client.id }}</td>
+                        <td scope="col">{{ client.nombre }}</td>
+                        <td scope="col">{{ client.plato_favorito }}</td>
+                        <td scope="col">
                             <a href='/edit-client/{{ client.id }}'>Edit</a> | <a href='/delete-client/{{ client.id }}'>Delete</a>  
                         </td>
                     </tr>
