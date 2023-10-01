@@ -1,12 +1,19 @@
-from fastapi import FastAPI, Request, Form, status
+from fastapi import FastAPI, Request, Form, status, Depends
 from fastapi.responses import RedirectResponse, HTMLResponse
 from fastapi.templating import Jinja2Templates
+from sqlalchemy.orm import Session
+import models
+from database import engine, get_db
+from models import ClientesRequest, Clientes
+from typing import Annotated
 
 app = FastAPI()
 
 templates = Jinja2Templates(directory='templates')
 
+models.Base.metadata.create_all(bind=engine)
 
+db_dependency = Annotated[Session, Depends(get_db)]
 
 taco_clients = [
     {
